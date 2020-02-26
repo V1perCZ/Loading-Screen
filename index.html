@@ -1,0 +1,54 @@
+<!---- ©Apollo https://discord.gg/7Km9ATw -->
+
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moon Roleplay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="particles-js">
+    <div id="logo">
+        <img src="https://i.imgur.com/bt2MkdK.png" alt="display this" width=200 height=200> <!-- Change the pic size here-->
+    </div>
+        <div class="maintext">
+            <h1>Moon Roleplay</h1>
+            <p>Pres SPACE zapnes pisnicky</p>
+            <p>Pres + zvysis hlasitost</p>
+            <p>Pres - snizis hlasitost</p>
+            <p>https://discord.gg/7MeGZme</p>
+        </div>
+        <!-- Place loadbar and spinner here-->
+        <div id="loading"><p style="position: absolute; right: 0px; left:15px; bottom: -5px; border:1px; border-style:solid; border-color:#000000; background: #000000; padding: 0.5em; width: 260px; opacity: 0.85;"><font face="verdana" size="4">Priletani do mesta Moon Roleplay</font><font color="#000000"></font><img src="images/load.gif" style="width:19px;height:18px;"></p></div>
+     <div id="particles-js"></div> <!--Credit: https://github.com/VincentGarreau/particles.js/-->
+    <script type="text/javascript" src="particles.js"></script> <!--Credit: https://github.com/VincentGarreau/particles.js/-->
+    <script type="text/javascript" src="app.js"></script> <!--Credit: https://github.com/VincentGarreau/particles.js/-->
+    <div class="apollofooter"></div> <!--Please do not remove. This helps people know where the loading screen came from.-->
+    <!---<audio autoplay="" id="leson" loop=""><source src="music/music.ogg" type="audio/ogg" />-->
+        <audio autoplay loop id="music">
+            <source src="./music/music.mp3" type="audio/mp3"> <!--Change music here. Simply replace the file in music with another ogg file. Be sure you name it here if you rename it.-->
+        </audio>
+        <script>
+             /* Tab = 9
+             + = 187          <-- CONTROLS
+             - = 189      
+             spacebar = 32 */
+            document.addEventListener("keydown", function(event) {
+                var music = document.getElementById('music')
+                var play = true
+                music.volume = 0.1;
+                if(event.keyCode == 187){
+                    music.volume = music.volume + 0.1;
+                }else if(event.keyCode == 189){
+                    music.volume = music.volume - 0.1;
+                }else if(event.keyCode == 9){
+                    console.log("Song skipped")
+                }else if(event.keyCode == 32){
+                    return music.paused ? music.play() : music.pause();
+                }
+            })
+            </script>
+    </body>
+</html>
